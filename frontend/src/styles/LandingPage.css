@@ -1,0 +1,249 @@
+:root {
+  --primary: #4f46e5;
+  --dark: #1e293b;
+  --light-text: #64748b;
+  --card-bg: #ffffff;
+}
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding: 20px 80px;
+
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eef2ff 100%
+  );
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-size: 4rem;
+  color: #1e293b;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.secondary-btn {
+  background: white;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-preview {
+  width: 370px;
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(79, 70, 229, 0.15);
+  border: 1px solid rgba(79, 70, 229, 0.08);
+}
+
+.stats-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  padding: 18px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.income {
+  background: #ecfdf5;
+}
+
+.expense {
+  background: #fef2f2;
+}
+
+.savings {
+  background: #eef2ff;
+}
+
+.stat-card span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.stat-card h3 {
+  margin-top: 8px;
+  font-size: 1.3rem;
+}
+
+.goal-card {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.goal-card h4 {
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  width: 53%;
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 999px;
+}
+
+.goal-card p {
+  margin-bottom: 5px;
+}
+
+.goal-card small {
+  color: #64748b;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-preview h3 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.goal-text {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.brand-highlight {
+  color: #4f46e5;
+  font-weight: 700;
+}
+.trust-line {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+.goal-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #1e293b;
+}
+.navbar {
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 80px;
+
+  background: transparent;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #4f46e5;;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+
+  border: 2px solid #4f46e5;
+
+  background: white;
+
+  color: #4f46e5;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(79,70,229,0.25);
+}
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+.primary-btn,
+.secondary-btn {
+  transition: all 0.3s ease;
+}
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
