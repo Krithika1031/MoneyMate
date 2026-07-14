@@ -1,7 +1,7 @@
 import "../styles/Features.css";
 function Features() {
   return (
-    <section className="features-section">
+    <section id="features" className="features-section">
       <h2>Why Choose MoneyMate?</h2>
 
       <p className="features-subtitle">

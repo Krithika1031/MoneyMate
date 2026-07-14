@@ -1,7 +1,7 @@
 import "../styles/HowItWorks.css";
 function HowItWorks() {
   return (
-    <section className="how-section">
+    <section id="how-it-works" className="how-section">
 
       <h2>How MoneyMate Works</h2>
 

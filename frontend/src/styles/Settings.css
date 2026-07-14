@@ -1,0 +1,61 @@
+.settings-page{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:40px;
+
+}
+
+.settings-card{
+
+    width:500px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.settings-card h2{
+
+    margin-bottom:30px;
+
+}
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.setting-item label{
+
+    font-weight:600;
+
+}
+
+.setting-item select{
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+}
+
+.setting-item input{
+
+    transform:scale(1.3);
+
+}

@@ -15,15 +15,17 @@ function Footer() {
         </div>
 
         <div className="footer-links">
-          <h3>Quick Links</h3>
-          <a href="#">Features</a>
-          <a href="#">Goals</a>
-          <a href="#">About</a>
-        </div>
+  <h3>Quick Links</h3>
 
+  <a href="#features">Features</a>
+
+  <a href="#goals">Goals</a>
+
+  <a href="#how-it-works">How It Works</a>
+</div>
         <div className="footer-contact">
           <h3>Contact</h3>
-          <p>contact@moneymate.com</p>
+          <p>officialmoneymate31@gmail.com</p>
           <p>Bangalore, India</p>
         </div>
 

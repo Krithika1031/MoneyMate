@@ -11,41 +11,44 @@
   flex: 1;
 }
 
-.goals-left h2 {
-    font-size: 3rem;
-    line-height: 1.1;
+.goals-left h2{
+    font-size:3rem;
+    font-weight:700;
+    color:#1e293b;
+    line-height:1.2;
+    margin-bottom:15px;
 }
-.goals-left p {
-  color: #64748b;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+.goals-left p{
+    color:#64748b;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:40px;
 }
 
-.goal-progress {
-  background: #f8fafc;
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
+.goal-progress{
+
+    background:#f8fafc;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    border:1px solid #e2e8f0;
+
+    transition:.3s ease;
+
+}
+.goal-progress:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(79,70,229,.12);
+
 }
 
 .goal-progress h3 {
   margin-bottom: 20px;
   color: #1e293b;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 14px;
-  background: #e2e8f0;
-  border-radius: 50px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.progress-fill {
-  width: 53%;
-  height: 100%;
-  background: #4f46e5;
 }
 
 .goal-progress span {
@@ -61,23 +64,42 @@
   justify-content: center;
 }
 
-.goal-chip {
-  padding: 18px 25px;
-  background: #eef2ff;
-  color: #4f46e5;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;;
+.goal-chip{
+  padding:18px 28px;
+  background:#eef2ff;
+  color:#4f46e5;
+  border-radius:50px;
+  font-size:16px;
+  font-weight:600;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:all .3s ease;
 }
 
-.goal-chip:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(79,70,229,0.15);
-  background: #4f46e5;
-  color: white;
+.goal-chip:hover{
+  background:#4f46e5;
+  color:white;
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(79,70,229,.25);
 }
+
 .goal-tip {
   margin-top: 12px;
   color: #4f46e5;
   font-weight: 500;
+}
+.goal-progress-bar {
+  width: 100%;
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.goal-progress-fill {
+  width: 53%;
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  border-radius: 50px;
 }

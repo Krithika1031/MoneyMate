@@ -1,6 +1,8 @@
 import "../styles/LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
+  const navigate = useNavigate();
   return (
     <>
     <nav className="navbar">
@@ -8,14 +10,17 @@ function LandingPage() {
 
   <div className="navbar-right">
     <div className="nav-links">
-      <a href="#">Features</a>
-      <a href="#">Goals</a>
-      <a href="#">About</a>
+    <a href="#features">Features</a>
+    <a href="#goals">Goals</a>
+    <a href="#how-it-works">About</a>
     </div>
 
-    <button className="nav-btn">
-      Login
-    </button>
+    <button
+  className="nav-btn"
+  onClick={() => navigate("/login")}
+>
+  Login
+</button>
   </div>
 </nav>
 
@@ -30,8 +35,18 @@ function LandingPage() {
 </p>
 
         <div className="hero-buttons">
-          <button className="primary-btn">Get Started</button>
-          <button className="secondary-btn">Login</button>
+         <button
+  className="primary-btn"
+  onClick={() => navigate("/signup")}
+>
+  Get Started
+</button>
+          <button
+  className="secondary-btn"
+  onClick={() => navigate("/login")}
+>
+  Login
+</button>
         </div>
        <div className="trust-line">
   <span>✓ Goal Tracking</span>
@@ -39,28 +54,28 @@ function LandingPage() {
   <span>✓ Expense Management</span>
 </div>
       </div>
-      <div class="hero-image">
-    <div class="dashboard-preview">
+      <div className="hero-image">
+    <div className="dashboard-preview">
         <h3>📊 MoneyMate Preview</h3>
 
-        <div class="stat">
+        <div className="stat">
             <span>Income</span>
             <strong>₹25,000</strong>
         </div>
 
-        <div class="stat">
+        <div className="stat">
             <span>Expenses</span>
             <strong>₹18,500</strong>
         </div>
 
-        <div class="stat">
+        <div className="stat">
             <span>Savings</span>
             <strong>₹6,500</strong>
         </div>
         <p className="goal-label">🎯 Saving for Laptop</p>
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
+        <div className="preview-progress-bar">
+    <div className="preview-progress-fill"></div>
+</div>
         <p className="goal-text">53% Goal Progress</p>
     </div>
 </div>

@@ -64,3 +64,10 @@
 
   font-size: 1rem;
 }
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.login-btn:disabled:hover {
+  transform: none;
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "react-router-dom": "^7.18.0",
+    "react-toastify": "^11.1.0",
+    "recharts": "^3.8.1"
+  }
+}

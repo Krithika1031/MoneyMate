@@ -1,19 +1,31 @@
 .how-section {
-  padding: 100px 80px;
+  padding: 80px 80px;
   text-align: center;
   background: #f8fafc;
 }
 
-.how-section h2 {
-  font-size: 3rem;
-  color: #1e293b;
-  margin-bottom: 15px;
+.how-section h2{
+
+font-size:3rem;
+
+font-weight:700;
+
+color:#1e293b;
+
+margin-bottom:15px;
+
 }
 
-.how-subtitle {
-  color: #64748b;
-  font-size: 1.1rem;
-  margin-bottom: 60px;
+.how-subtitle{
+
+font-size:1.1rem;
+
+color:#64748b;
+
+margin-bottom:60px;
+
+line-height:1.8;
+
 }
 
 .steps-container {
