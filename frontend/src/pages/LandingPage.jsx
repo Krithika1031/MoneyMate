@@ -1,29 +1,12 @@
 import "../styles/LandingPage.css";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
   const navigate = useNavigate();
   return (
     <>
-    <nav className="navbar">
-  <div className="logo">💰 MoneyMate</div>
-
-  <div className="navbar-right">
-    <div className="nav-links">
-    <a href="#features">Features</a>
-    <a href="#goals">Goals</a>
-    <a href="#how-it-works">About</a>
-    </div>
-
-    <button
-  className="nav-btn"
-  onClick={() => navigate("/login")}
->
-  Login
-</button>
-  </div>
-</nav>
+    <Navbar />
 
     <section className="hero">
       <div className="hero-left">
