@@ -173,7 +173,7 @@ EMAIL_PASSWORD=Your_Email_App_Password
 
 ## 🏠 Landing Page
 
-![landingpage](image.png)
+![landingpage](docs/landingpage.png)
 
 ---
 
