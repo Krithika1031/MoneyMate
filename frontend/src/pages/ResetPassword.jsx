@@ -90,7 +90,9 @@ setTimeout(() => {
     <div className="auth-container">
 
       <div className="auth-card">
-
+          <div className="auth-logo">
+    💰 MoneyMate
+</div>
         <h2>Create New Password 🔒</h2>
 
         <p>Enter your new password.</p>
@@ -121,7 +123,15 @@ setTimeout(() => {
   className="signup-btn"
   disabled={loading}
 >
-  {loading ? "Updating Password..." : "Update Password"}
+  {loading ? (
+<>
+<div className="spinner"></div>
+
+<span>Updating...</span>
+</>
+) : (
+"Update Password"
+)}
 </button>
          
         </form> 

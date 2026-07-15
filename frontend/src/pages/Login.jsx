@@ -72,7 +72,9 @@ setTimeout(() => {
     <div className="auth-container">
 
       <div className="auth-card">
-
+        <div className="auth-logo">
+    💰 MoneyMate
+</div>
         <h2>Welcome Back 👋</h2>
 
         <p>Login to continue managing your finances.</p>
@@ -110,8 +112,23 @@ setTimeout(() => {
   className="login-btn"
   disabled={loading}
 >
-  {loading ? "Logging in..." : "Login"}
+  {loading ? (
+<>
+<div className="spinner"></div>
+<span>Logging In...</span>
+</>
+) : (
+"Login"
+)}
 </button>
+<p className="bottom-link">
+Don't have an account?
+
+<span onClick={()=>navigate("/signup")}>
+ Create Account
+</span>
+
+</p>
         </form>
 
       </div>

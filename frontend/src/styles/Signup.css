@@ -68,18 +68,31 @@
     border:1.5px solid #d6dce8;
     border-radius:16px;
     outline:none;
-    transition:0.25s ease;
+    transition:all .3s ease;
     margin-bottom:8px;
 }
 
 .auth-card input:focus{
     border-color:#4f46e5;
-    box-shadow:0 0 0 3px rgba(79,70,229,.12);
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+    transform:translateY(-2px);
+    transition:all .3s ease;
 }
 .auth-card{
     width:460px;
     padding:45px;
     border-radius:28px;
+    animation: floatCard 5s ease-in-out infinite;
+transition: transform 0.3s ease;
+animation:
+    cardEntry .6s ease,
+    floatCard 5s ease-in-out infinite;
+    cursor:default;
+}
+.auth-card:hover{
+
+box-shadow:0 20px 60px rgba(79,70,229,.12);
+
 }
 .auth-card h2{
     margin-bottom:10px;
@@ -100,11 +113,25 @@
     font-weight:600;
     cursor:pointer;
     transition:.3s;
+    display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
 }
 
 .signup-btn:hover{
-    background:#4338ca;
-    transform:translateY(-2px);
+
+background:#4338ca;
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(79,70,229,.30);
+
+}
+.signup-btn:active{
+
+transform:scale(.98);
+
 }
 .input-wrapper{
 position:relative;
@@ -180,4 +207,147 @@ opacity:1;
 
 .invalid{
     color:#dc2626;
+}
+.auth-logo{
+    font-size:32px;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:20px;
+}
+.bottom-link{
+
+margin-top:20px;
+
+font-size:15px;
+
+color:#64748b;
+
+}
+
+.bottom-link span{
+
+color:#4f46e5;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.bottom-link span:hover{
+
+text-decoration:underline;
+
+}
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+.password-checklist{
+    margin-top:-10px;
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.password-checklist p{
+    margin:6px 0;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.valid{
+    color:#16a34a;
+}
+
+.invalid{
+    color:#dc2626;
+}
+/* ---------- Loading Spinner ---------- */
+
+.spinner{
+
+    width:18px;
+
+    height:18px;
+
+    border:2px solid rgba(255,255,255,.4);
+
+    border-top:2px solid white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* ---------- Card Entry Animation ---------- */
+
+@keyframes cardEntry{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@media(max-width:768px){
+
+.auth-card{
+
+width:92%;
+
+padding:28px;
+
+}
+
+.auth-logo h1{
+
+font-size:26px;
+
+}
+
+.auth-card h2{
+
+font-size:28px;
+
+}
+
 }

@@ -642,7 +642,7 @@ setShowGoalForm(false);
 </div>
           <input
   type="text"
-  placeholder="🔍 Search Transactions"
+  placeholder="🔍 Search by source or category..."
   value={searchTerm}
   onChange={(e) =>
     setSearchTerm(e.target.value)
@@ -1111,7 +1111,7 @@ setShowGoalForm(false);
 </div>
 </div>
 
-{/* <div className="chart-card">
+ <div className="chart-card">
 
   <h2>
     📈 Financial Overview
@@ -1132,18 +1132,23 @@ setShowGoalForm(false);
 
       <YAxis />
 
-      <Tooltip />
+      <Tooltip
+
+cursor={{fill:"#eef2ff"}}
+
+/>
 
       <Bar
-        dataKey="amount"
-        fill="#4f46e5"
-      />
+dataKey="amount"
+radius={[10,10,0,0]}
+fill="#6366f1"
+/>
 
     </BarChart>
 
   </ResponsiveContainer>
 
-</div> */}
+</div> 
 
     </div>
     

@@ -3,6 +3,8 @@ import "../styles/Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function Signup() {
   const navigate = useNavigate();
@@ -260,9 +262,21 @@ finally{
     setPasswordStrength("Strong");
 };
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+    <motion.div
 
+className="auth-container"
+
+initial={{opacity:0}}
+
+animate={{opacity:1}}
+
+transition={{duration:.5}}
+
+>
+      <div className="auth-card">
+         <div className="auth-logo">
+    💰 MoneyMate
+</div>
         <h2>Create Account 🚀</h2>
 
         <p>Start your financial journey today.</p>
@@ -327,7 +341,7 @@ finally{
             className="toggle-password"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "🙈" : "👁"}
+           {showPassword ? <FiEyeOff /> : <FiEye />}
           </span>
 
         </div>
@@ -338,18 +352,46 @@ finally{
           </p>
         )}
         {password && (
-  <div className="strength-container">
+  <>
+    <div className="strength-container">
 
-    <div className={`strength-bar ${passwordStrength.toLowerCase()}`}></div>
+      <div
+        className={`strength-bar ${passwordStrength.toLowerCase()}`}
+      ></div>
 
-    <p className={`strength-text ${passwordStrength.toLowerCase()}`}>
-      {passwordStrength} Password
-    </p>
+      <p
+        className={`strength-text ${passwordStrength.toLowerCase()}`}
+      >
+        {passwordStrength} Password
+      </p>
 
-  </div>
-  
+    </div>
+
+    <div className="password-checklist">
+
+      <p className={passwordChecks.length ? "valid" : "invalid"}>
+        {passwordChecks.length ? "✔" : "✖"} At least 8 characters
+      </p>
+
+      <p className={passwordChecks.uppercase ? "valid" : "invalid"}>
+        {passwordChecks.uppercase ? "✔" : "✖"} One uppercase letter
+      </p>
+
+      <p className={passwordChecks.lowercase ? "valid" : "invalid"}>
+        {passwordChecks.lowercase ? "✔" : "✖"} One lowercase letter
+      </p>
+
+      <p className={passwordChecks.number ? "valid" : "invalid"}>
+        {passwordChecks.number ? "✔" : "✖"} One number
+      </p>
+
+      <p className={passwordChecks.special ? "valid" : "invalid"}>
+        {passwordChecks.special ? "✔" : "✖"} One special character
+      </p>
+
+    </div>
+  </>
 )}
-
         {/* Confirm Password */}
 
         <div className="password-field">
@@ -379,7 +421,7 @@ finally{
               )
             }
           >
-            {showConfirmPassword ? "🙈" : "👁"}
+            {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
           </span>
 
         </div>
@@ -394,12 +436,35 @@ finally{
   type="button"
   className="signup-btn"
   onClick={handleSignup}
+  disabled={loading}
 >
-  Sign Up
+
+{loading ? (
+
+<>
+<div className="spinner"></div>
+
+<span>Creating Account...</span>
+</>
+
+) : (
+
+"Sign Up"
+
+)}
+
 </button>
+<p className="bottom-link">
+Already have an account?
+
+<span onClick={()=>navigate("/login")}>
+ Login
+</span>
+
+</p>
 
       </div>
-    </div>
+    </motion.div>
   );
 }
 

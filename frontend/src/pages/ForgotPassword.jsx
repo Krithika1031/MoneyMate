@@ -84,7 +84,10 @@ setTimeout(() => {
       e.preventDefault();
       handleSendOTP();
     }}
-  >
+  >        
+          <div className="auth-logo">
+    💰 MoneyMate
+</div>
 
         <h2>Forgot Password 🔒</h2>
 
@@ -102,8 +105,24 @@ setTimeout(() => {
   className="signup-btn"
   disabled={loading}
 >
-  {loading ? "Sending OTP..." : "Send OTP"}
+  {loading ? (
+<>
+<div className="spinner"></div>
+
+<span>Sending OTP...</span>
+</>
+) : (
+"Send OTP"
+)}
 </button>
+<p className="bottom-link">
+Back to
+
+<span onClick={()=>navigate("/login")}>
+ Login
+</span>
+
+</p>
         </form>
 
       </div>

@@ -7,7 +7,11 @@
 
     align-items:center;
 
-    background:#f8fafc;
+    background:
+linear-gradient(
+135deg,
+#f8fafc 0%,
+#eef2ff 100%);
 }
 
 .auth-card{
@@ -21,9 +25,20 @@
     border-radius:20px;
 
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+    animation:float 6s ease-in-out infinite;
+    animation: floatCard 5s ease-in-out infinite;
+transition: transform .3s ease;
+animation:
+    cardEntry .6s ease,
+    floatCard 5s ease-in-out infinite;
+    cursor:default;
+    border-radius:24px;
+}
+.auth-card:hover{
+
+box-shadow:0 20px 60px rgba(79,70,229,.12);
 
 }
-
 .auth-card h2{
 
     text-align:center;
@@ -43,23 +58,163 @@
     margin-bottom:30px;
 
 }
+.auth-card input:focus{
+    border-color:#4f46e5;
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+    transform:translateY(-2px);
+}
+@keyframes floatCard{
 
-.auth-card input{
+    0%{
+        transform:translateY(0px);
+    }
 
-    width:100%;
+    50%{
+        transform:translateY(-4px);
+    }
 
-    padding:15px;
+    100%{
+        transform:translateY(0px);
+    }
 
-    border-radius:10px;
+}
+/* OTP Boxes */
 
-    border:1px solid #cbd5e1;
+.otp-container{
 
-    font-size:18px;
+display:flex;
 
+justify-content:center;
+
+gap:12px;
+
+margin-bottom:25px;
+
+}
+
+.otp-container input{
+
+width:55px;
+
+height:60px;
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:600;
+
+border:2px solid #d6dce8;
+
+border-radius:16px;
+
+transition:.3s;
+
+}
+
+.otp-container input:focus{
+
+border-color:#4f46e5;
+
+box-shadow:0 0 0 4px rgba(79,70,229,.15);
+
+transform:translateY(-2px);
+
+}
+.resend-section{
+    margin-top:20px;
     text-align:center;
+}
 
-    letter-spacing:8px;
+.timer-text{
+    color:#64748b;
+    font-size:15px;
+}
 
-    margin-bottom:25px;
+.resend-link{
+    color:#4f46e5;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.resend-link:hover{
+    text-decoration:underline;
+}
+/* ---------- Loading Spinner ---------- */
+
+.spinner{
+
+    width:18px;
+
+    height:18px;
+
+    border:2px solid rgba(255,255,255,.4);
+
+    border-top:2px solid white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* ---------- Card Entry Animation ---------- */
+
+@keyframes cardEntry{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@media(max-width:768px){
+
+.auth-card{
+
+width:92%;
+
+padding:28px;
+
+}
+
+.auth-logo h1{
+
+font-size:26px;
+
+}
+
+.auth-card h2{
+
+font-size:28px;
+
+}
 
 }
