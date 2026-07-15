@@ -311,4 +311,24 @@ gap:20px;
 
 width:100%;
 }
+.goals-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+.goal-card{
+
+width:100%;
+
+max-width:350px;
+
+margin:auto;
+
+}
 }
