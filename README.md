@@ -8,9 +8,9 @@ Designed with simplicity, security, and usability in mind, MoneyMate helps users
 
 ---
 
-# ✨ Features
+# Features
 
-## 🔐 Authentication
+## Authentication
 - User Registration
 - Secure Login
 - JWT Authentication
@@ -23,7 +23,7 @@ Designed with simplicity, security, and usability in mind, MoneyMate helps users
 
 ---
 
-## 💰 Financial Management
+## Financial Management
 - Add Income
 - Add Expenses
 - Create Savings Goals
@@ -33,7 +33,7 @@ Designed with simplicity, security, and usability in mind, MoneyMate helps users
 
 ---
 
-## 📊 Dashboard & Analytics
+## Dashboard & Analytics
 - Financial Overview
 - Current Balance
 - Total Income
@@ -45,12 +45,12 @@ Designed with simplicity, security, and usability in mind, MoneyMate helps users
 
 ---
 
-## 📄 Reports
+## Reports
 - Download Transaction Report as PDF
 
 ---
 
-## 👤 User Profile
+## User Profile
 - Personal Profile
 - Account Information
 - Settings
@@ -60,16 +60,16 @@ Designed with simplicity, security, and usability in mind, MoneyMate helps users
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 Optimized for:
-- 💻 Desktop
-- 💼 Laptop
-- 📱 Mobile
-- 📟 Tablet
+- Desktop
+- Laptop
+- Mobile
+- Tablet
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 ### Frontend
 - React.js
@@ -98,7 +98,7 @@ Optimized for:
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 MoneyMate
@@ -125,7 +125,7 @@ MoneyMate
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 ## Clone the Repository
 
@@ -151,7 +151,7 @@ npm run dev
 
 ---
 
-# 🔑 Environment Variables
+# Environment Variables
 
 Create a `.env` file inside the **backend** folder and add:
 
@@ -169,57 +169,57 @@ EMAIL_PASSWORD=Your_Email_App_Password
 
 ---
 
-# 📸 Project Preview
+# Project Preview
 
-## 🏠 Landing Page
+## Landing Page
 
 ![landingpage](docs/landingpage.png)
 
 ---
 
-## 🔐 Login Page
+## Login Page
 
-![loginpage](image.png)
-
----
-
-## 📊 Dashboard
-
-![dashboard](image.png)
+![loginpage](docs/loginpage.png)
 
 ---
 
-## 📈 Analytics
+## Dashboard
 
-![analytics](image.png)
-
----
-
-## 👤 Profile
-
-![profile](image.png)
+![dashboard](docs/dashboard.png)
 
 ---
 
-## ⚙️ Settings
+## Analytics
 
-![settings](image.png)
-
----
-
-# 🎯 Future Enhancements
-
-- 🌙 Fully Functional Dark Mode
-- 📅 Monthly Budget Planner
-- 🔔 Smart Spending Alerts
-- 📊 Interactive Charts & Graphs
-- 📤 CSV & Excel Export
-- 💳 Multiple Wallet Support
-- ☁️ Cloud Deployment
+![analytics](docs/Analytics.png)
 
 ---
 
-# 📚 Learning Outcomes
+## Profile
+
+![profile](docs/profile.png)
+
+---
+
+## Settings
+
+![settings](docs/settings.png)
+
+---
+
+# Future Enhancements
+
+- Fully Functional Dark Mode
+- Monthly Budget Planner
+- Smart Spending Alerts
+- Interactive Charts & Graphs
+- CSV & Excel Export
+- Multiple Wallet Support
+- Cloud Deployment
+
+---
+
+# Learning Outcomes
 
 Through this project, I gained hands-on experience in:
 
@@ -236,7 +236,7 @@ Through this project, I gained hands-on experience in:
 
 ---
 
-# 👩‍💻 Developer
+# Developer
 
 ## Krithika K Bhat
 
@@ -248,6 +248,3 @@ Through this project, I gained hands-on experience in:
 
 ---
 
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub!
