@@ -246,89 +246,97 @@
   align-items: center;
   gap: 40px;
 }
-@media (max-width: 768px) {
+@media (max-width:768px){
+
+  /* ---------- Hero ---------- */
 
   .hero{
     flex-direction:column;
-    align-items:flex-start;
-    text-align:left;
-    padding:40px 20px;
-    gap:30px;
-}
-
-  .hero-left {
-    width: 100%;
-    max-width: 100%;
+    align-items:center;
+    text-align:center;
+    gap:25px;
+    padding:30px 20px 40px;
+    min-height:auto;
   }
 
-  .hero-left h1 {
-    font-size: 3.4rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
+  .hero-left{
+    width:100%;
+    max-width:100%;
   }
 
-  .hero-left p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
+  .hero-left h1{
+    font-size:3.2rem;
+    line-height:1.15;
+    margin-bottom:18px;
   }
+
+  .hero-left p{
+    font-size:1.05rem;
+    line-height:1.7;
+    margin-bottom:20px;
+  }
+
+  /* ---------- Buttons ---------- */
 
   .hero-buttons{
-    flex-direction:row;
-    width:auto;
-}
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:18px;
+  }
 
   .primary-btn,
-.secondary-btn{
-    width:auto;
-}
-
-  .hero-right {
-    width: 100%;
-    display: flex;
-    justify-content:flex-start;
+  .secondary-btn{
+    padding:12px 24px;
+    font-size:1rem;
   }
 
-  .dashboard-preview {
-    width: 100%;
-    max-width: 380px;
-    padding: 25px;
-  }
-
-  .stats-row {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .stat-card {
-    width: 100%;
-  }
-
-  .goal-card {
-    width: 100%;
-  }
+  /* ---------- Trust line ---------- */
 
   .trust-line{
-    flex-direction:row;
-    gap:25px;
-}
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    font-size:.95rem;
+    margin-top:5px;
+  }
+
+  /* ---------- Preview ---------- */
+
+  .hero-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  .dashboard-preview{
+    width:100%;
+    max-width:360px;
+    padding:22px;
+  }
+
+  .stat{
+    font-size:15px;
+  }
+
+  .goal-label{
+    margin-top:18px;
+  }
 
   /* ---------- Navbar ---------- */
 
-  .navbar {
-    padding: 20px;
+  .navbar{
+    padding:18px 20px;
   }
 
-  .navbar-right {
-    gap: 15px;
+  .logo{
+    font-size:2rem;
   }
 
-  .nav-links {
-    display: none;
-  }
-
-  .nav-btn {
-    display: none;
+  .navbar-right{
+    display:none;
   }
 
 }
