@@ -1,4 +1,5 @@
 import "../styles/LandingPage.css";
+import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
