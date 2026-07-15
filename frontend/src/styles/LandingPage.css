@@ -248,14 +248,13 @@
 }
 @media (max-width: 768px) {
 
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-    padding: 50px 20px;
-    min-height: auto;
-  }
+  .hero{
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    padding:40px 20px;
+    gap:30px;
+}
 
   .hero-left {
     width: 100%;
@@ -274,17 +273,15 @@
     margin-bottom: 25px;
   }
 
-  .hero-buttons {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+  .hero-buttons{
+    flex-direction:row;
+    width:auto;
+}
 
   .primary-btn,
-  .secondary-btn {
-    width: 100%;
-  }
+.secondary-btn{
+    width:auto;
+}
 
   .hero-right {
     width: 100%;
@@ -311,11 +308,10 @@
     width: 100%;
   }
 
-  .trust-line {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
+  .trust-line{
+    flex-direction:row;
+    gap:25px;
+}
 
   /* ---------- Navbar ---------- */
 
