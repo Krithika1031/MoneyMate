@@ -50,3 +50,38 @@
   color: #64748b;
   line-height: 1.3;
 }
+@media (max-width:768px){
+
+.features-section{
+
+    padding:60px 20px;
+
+}
+
+.features-section h2{
+
+    font-size:2.7rem;
+
+}
+
+.features-subtitle{
+
+    margin-bottom:40px;
+
+}
+
+.features-grid{
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+}
+
+.feature-card{
+
+    width:100%;
+
+}
+
+}

@@ -66,3 +66,26 @@
   color: white;
   padding-left: 8px;
 }
+@media (max-width:768px){
+
+.footer{
+
+    padding:50px 20px;
+
+}
+
+.footer-content{
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.footer-brand{
+
+    max-width:100%;
+
+}
+
+}
