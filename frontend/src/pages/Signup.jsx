@@ -3,6 +3,7 @@ import "../styles/Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { API_URL } from "../config";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { motion } from "framer-motion";
 
@@ -132,7 +133,7 @@ const validateEmail = () => {
 
   setValidEmail(true);
 
-  console.log("Email is valid ✅");
+  toast.success("Email is valid ✅");
 }
 
 };
@@ -184,14 +185,14 @@ const validateConfirmPassword = () => {
 
 
   if (!validateForm()) {
-    console.log("Validation Failed");
+    toast.error("Validation Failed");
     return;
   }
 
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/register",
+      `${API_URL}/api/auth/register`,
       {
         method: "POST",
         headers: {
@@ -227,7 +228,7 @@ const validateConfirmPassword = () => {
 
   } catch (error) {
 
-    console.log("ERROR:");
+    toast.error("ERROR:");
 
     toast.error(
 "Something went wrong. Please try again."

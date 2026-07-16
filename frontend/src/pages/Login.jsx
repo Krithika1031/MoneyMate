@@ -2,6 +2,7 @@ import "../styles/Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config";
 import { toast } from "sonner";
 
 function Login() {
@@ -33,7 +34,7 @@ if (!emailRegex.test(email)) {
   setLoading(true);
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      `${API_URL}/api/auth/login`,
       {
         email,
         password,
