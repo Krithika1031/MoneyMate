@@ -125,6 +125,61 @@ export const verifyOTP = async (req, res) => {
   }
 };
 
+// ======================= RESEND OTP =======================
+
+export const resendOTP = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    const otp = otpGenerator.generate(6, {
+      upperCaseAlphabets: false,
+      lowerCaseAlphabets: false,
+      specialChars: false,
+    });
+
+    user.otp = otp;
+    user.otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
+
+    await user.save();
+
+    await sendEmail(
+      email,
+      "MoneyMate Email Verification",
+      `
+      <h2>Your New OTP</h2>
+
+      <p>Your new OTP is:</p>
+
+      <h1>${otp}</h1>
+
+      <p>OTP expires in 5 minutes.</p>
+      `
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "OTP sent successfully",
+    });
+
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
 // ======================= LOGIN =======================
 
 export const loginUser = async (req, res) => {
