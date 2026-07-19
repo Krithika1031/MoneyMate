@@ -2,8 +2,6 @@ import express from "express";
 
 import {
   registerUser,
-  verifyOTP,
-  resendOTP,
   loginUser,
   forgotPassword,
   verifyResetOTP,
@@ -13,11 +11,6 @@ const router = express.Router();
 
 // Register
 router.post("/register", registerUser);
-
-// Verify OTP
-router.post("/verify-otp", verifyOTP);
-
-router.post("/resend-otp", resendOTP);
 
 router.post("/forgot-password", forgotPassword);
 

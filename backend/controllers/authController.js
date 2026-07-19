@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import otpGenerator from "otp-generator";
 
 import User from "../models/User.js";
 import sendEmail from "../utils/sendEmail.js";
@@ -22,95 +21,15 @@ export const registerUser = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const otp = otpGenerator.generate(6, {
-      upperCaseAlphabets: false,
-      lowerCaseAlphabets: false,
-      specialChars: false,
-    });
-
-    const otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
-
     await User.create({
       fullName,
       email,
       password: hashedPassword,
-      otp,
-      otpExpiry,
-      isVerified: false,
     });
-
-    await sendEmail(
-      email,
-      "MoneyMate Email Verification",
-      `
-      <h2>Welcome to MoneyMate 💰</h2>
-
-      <p>Hello <b>${fullName}</b>,</p>
-
-      <p>Your OTP is:</p>
-
-      <h1>${otp}</h1>
-
-      <p>OTP expires in 5 minutes.</p>
-      `
-    );
 
     res.status(201).json({
       success: true,
-      message: "OTP Sent Successfully",
-    });
-
-  } catch (error) {
-    console.log(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Server Error",
-    });
-  }
-};
-
-// ======================= VERIFY OTP =======================
-
-export const verifyOTP = async (req, res) => {
-  console.log("verifyOTP called");
-  console.log(req.body);
-  try {
-
-    const { email, otp } = req.body;
-
-    const user = await User.findOne({ email });
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found",
-      });
-    }
-
-    if (user.otp !== otp) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid OTP",
-      });
-    }
-
-    if (user.otpExpiry < new Date()) {
-      return res.status(400).json({
-        success: false,
-        message: "OTP Expired",
-      });
-    }
-
-    user.isVerified = true;
-    user.otp = "";
-    user.otpExpiry = null;
-
-    await user.save();
-
-    res.status(200).json({
-      success: true,
-      message: "Email verified successfully",
+      message: "Account created successfully",
     });
 
   } catch (error) {
@@ -122,61 +41,6 @@ export const verifyOTP = async (req, res) => {
       message: "Server Error",
     });
 
-  }
-};
-
-// ======================= RESEND OTP =======================
-
-export const resendOTP = async (req, res) => {
-  try {
-    const { email } = req.body;
-
-    const user = await User.findOne({ email });
-
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found",
-      });
-    }
-
-    const otp = otpGenerator.generate(6, {
-      upperCaseAlphabets: false,
-      lowerCaseAlphabets: false,
-      specialChars: false,
-    });
-
-    user.otp = otp;
-    user.otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
-
-    await user.save();
-
-    await sendEmail(
-      email,
-      "MoneyMate Email Verification",
-      `
-      <h2>Your New OTP</h2>
-
-      <p>Your new OTP is:</p>
-
-      <h1>${otp}</h1>
-
-      <p>OTP expires in 5 minutes.</p>
-      `
-    );
-
-    res.status(200).json({
-      success: true,
-      message: "OTP sent successfully",
-    });
-
-  } catch (error) {
-    console.log(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Server Error",
-    });
   }
 };
 
@@ -196,13 +60,6 @@ export const loginUser = async (req, res) => {
       return res.status(404).json({
         success: false,
         message: "User not found",
-      });
-    }
-
-    if (!user.isVerified) {
-      return res.status(401).json({
-        success: false,
-        message: "Please verify your email first.",
       });
     }
 
