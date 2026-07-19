@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { API_URL } from "../config";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { API_URL } from "../config";
 
 function Signup() {
   const navigate = useNavigate();
@@ -210,13 +211,11 @@ const validateConfirmPassword = () => {
 
     if (data.success) {
 
-      localStorage.setItem("email", email);
+  toast.success("Account created successfully 🎉");
 
-      toast.success("OTP Sent Successfully 📧");
-
-      setTimeout(() => {
-        navigate("/verify-otp");
-      }, 700);
+  setTimeout(() => {
+    navigate("/login");
+  }, 700);
 
     } else {
 
