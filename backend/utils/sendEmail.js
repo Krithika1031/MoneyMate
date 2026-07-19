@@ -9,10 +9,16 @@ console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
   port: 587,
   secure: false,
   requireTLS: true,
+
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+
+  family: 4,                 // Force IPv4
+  connectionTimeout: 30000,  // 30 seconds
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
 });
     await transporter.sendMail({
       from: `"MoneyMate" <${process.env.EMAIL_USER}>`,
