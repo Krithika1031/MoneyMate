@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/VerifyOTP.css";
 import { toast } from "sonner";
+import { API_URL } from "../config";
 
 function VerifyOTP() {
 
@@ -35,7 +36,7 @@ const [canResend, setCanResend] = useState(false);
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/verify-otp",
+        "`${API_URL}/api/auth/verify-otp",
         {
           method: "POST",
           headers: {
@@ -52,15 +53,13 @@ const [canResend, setCanResend] = useState(false);
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/resend-otp",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      }
-    );
+        `${API_URL}/api/auth/resend-otp`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ email }),
+});
 
     const data = await response.json();
 
@@ -103,7 +102,7 @@ const [canResend, setCanResend] = useState(false);
 
     } catch (error) {
 
-      console.log(error);
+      toast.error(error);
 
       toast.error("Server Error")
 
