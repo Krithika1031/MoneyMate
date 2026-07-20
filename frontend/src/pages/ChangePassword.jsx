@@ -30,7 +30,7 @@ function ChangePassword() {
     const token = localStorage.getItem("token");
 
     const res = await axios.put(
-      `${API_URL}/auth/change-password`,
+      `${API_URL}/api/auth/change-password`,
       {
         currentPassword,
         newPassword,
