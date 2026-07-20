@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/VerifyOTP.css";
 import { toast } from "sonner";
 import { API_URL } from "../config";
 
