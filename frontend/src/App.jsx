@@ -26,18 +26,6 @@ function App() {
 
         <Route path="/signup" element={<Signup />} />
       
-<Route
-  path="/verify-reset-otp"
-  element={<VerifyResetOTP />}
-/>
-      <Route
-    path="/forgot-password"
-    element={<ForgotPassword />}
-/>
-<Route
-  path="/reset-password"
-  element={<ResetPassword />}
-/>
         <Route path="/login" element={<Login />} />
 
        <Route
