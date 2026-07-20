@@ -2,6 +2,7 @@ import axios from "axios";
 import { API_URL } from "../config";
 import { useState } from "react";
 import "../styles/ChangePassword.css";
+import { toast } from "sonner";
 
 function ChangePassword() {
 
@@ -16,12 +17,12 @@ function ChangePassword() {
 
   const handleChangePassword = async () => {
   if (!currentPassword || !newPassword || !confirmPassword) {
-    alert("Please fill all fields");
+    toast.error("Please fill all the fields.");
     return;
   }
 
   if (newPassword !== confirmPassword) {
-    alert("New passwords do not match");
+    toast.error("New password and confirm password do not match.");
     return;
   }
 
@@ -41,16 +42,16 @@ function ChangePassword() {
       }
     );
 
-    alert(res.data.message);
+    toast.success("Password updated successfully!");
 
     setCurrentPassword("");
     setNewPassword("");
     setConfirmPassword("");
 
   } catch (error) {
-    alert(
-      error.response?.data?.message || "Something went wrong"
-    );
+    toast.error(
+  error.response?.data?.message || "Something went wrong. Please try again."
+);
   }
 };
 
