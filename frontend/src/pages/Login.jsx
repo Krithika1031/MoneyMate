@@ -103,12 +103,7 @@ setTimeout(() => {
   onChange={(e) => setPassword(e.target.value)}
 />
 
-<p
-  className="forgot-password"
-  onClick={() => navigate("/forgot-password")}
->
-  Forgot Password?
-</p>
+
 
 <button
   type="submit"
