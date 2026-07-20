@@ -59,9 +59,13 @@ function ChangePassword() {
 
     <div className="change-password-page">
 
-      <div className="change-password-card">
-
-        <h2>🔒 Change Password</h2>
+  <form
+    className="change-password-card"
+    onSubmit={(e) => {
+      e.preventDefault();
+      handleChangePassword();
+    }}
+  >
 
         <input
           type="password"
@@ -91,15 +95,15 @@ function ChangePassword() {
         />
 
        <button
-  className="signup-btn"
-  onClick={handleChangePassword}
->
-  Update Password
-</button>
+      type="submit"
+      className="signup-btn"
+    >
+      Update Password
+    </button>
 
-      </div>
+  </form>
 
-    </div>
+</div>
 
   );
 
