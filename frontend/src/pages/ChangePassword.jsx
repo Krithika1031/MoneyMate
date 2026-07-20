@@ -91,7 +91,7 @@ function ChangePassword() {
         <input
           type="password"
           placeholder="Confirm Password"
-          autoComplete="current-password"
+          autoComplete="new-password"
           value={confirmPassword}
           onChange={(e)=>
             setConfirmPassword(e.target.value)
