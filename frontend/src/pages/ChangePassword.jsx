@@ -65,11 +65,13 @@ function ChangePassword() {
       e.preventDefault();
       handleChangePassword();
     }}
-  >
+  > 
+       <h2>Change password 🔐</h2>
 
         <input
           type="password"
           placeholder="Current Password"
+          autoComplete="current-password"
           value={currentPassword}
           onChange={(e)=>
             setCurrentPassword(e.target.value)
@@ -79,6 +81,7 @@ function ChangePassword() {
         <input
           type="password"
           placeholder="New Password"
+          autoComplete="new-password"
           value={newPassword}
           onChange={(e)=>
             setNewPassword(e.target.value)
@@ -88,6 +91,7 @@ function ChangePassword() {
         <input
           type="password"
           placeholder="Confirm Password"
+          autoComplete="current-password"
           value={confirmPassword}
           onChange={(e)=>
             setConfirmPassword(e.target.value)
