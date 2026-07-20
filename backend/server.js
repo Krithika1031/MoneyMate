@@ -12,8 +12,8 @@ const app = express();
 app.use(
   cors({
     origin: [
+      "https://money-mate-sigma-brown.vercel.app",
       "http://localhost:5173",
-      "https://moneymate31.vercel.app",
     ],
     credentials: true,
   })
