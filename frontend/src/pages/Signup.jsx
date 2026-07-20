@@ -1,9 +1,7 @@
-import axios from "axios";
 import "../styles/Signup.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { API_URL } from "../config";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { API_URL } from "../config";
@@ -31,74 +29,36 @@ function Signup() {
   special: /[^A-Za-z0-9]/.test(password),
 };
   const [validEmail, setValidEmail] = useState(false);
-const [validPassword, setValidPassword] = useState(false);
-const [validConfirmPassword, setValidConfirmPassword] = useState(false);
 
   // Validation
-  const validateForm = () => {
-    let newErrors = {};
+ const validateForm = () => {
+  let newErrors = {};
 
-    // Full Name
-    if (!fullName.trim()) {
-      newErrors.fullName = "Full Name is required";
-    }
-
-    // Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    const validateEmail = () => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!email.trim()) {
-    setErrors((prev) => ({
-      ...prev,
-      email: "Email is required",
-    }));
-
-    setValidEmail(false);
+  // Full Name
+  if (!fullName.trim()) {
+    newErrors.fullName = "Full Name is required";
   }
 
-  else if (!emailRegex.test(email)) {
-    setErrors((prev) => ({
-      ...prev,
-      email: "Enter a valid email address",
-    }));
-
-    setValidEmail(false);
+  // Password
+  if (!password) {
+    newErrors.password = "Password is required";
+  } else if (password.length < 8) {
+    newErrors.password =
+      "Password must contain at least 8 characters";
   }
 
-  else {
-
-    setErrors((prev) => ({
-      ...prev,
-      email: "",
-    }));
-
-    setValidEmail(true);
-    
-
+  // Confirm Password
+  if (!confirmPassword) {
+    newErrors.confirmPassword = "Please confirm your password";
+  } else if (password !== confirmPassword) {
+    newErrors.confirmPassword =
+      "Passwords do not match";
   }
+
+  setErrors(newErrors);
+
+  return Object.keys(newErrors).length === 0;
 };
-    // Password
-    if (!password) {
-      newErrors.password = "Password is required";
-    } else if (password.length < 8) {
-      newErrors.password =
-        "Password must contain at least 8 characters";
-    }
-
-    // Confirm Password
-    if (!confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password";
-    } else if (password !== confirmPassword) {
-      newErrors.confirmPassword =
-        "Passwords do not match";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
-  };
   const validateName = () => {
   if (!fullName.trim()) {
     setErrors((prev) => ({
@@ -186,9 +146,10 @@ const validateConfirmPassword = () => {
 
 
   if (!validateForm()) {
-    toast.error("Validation Failed");
-    return;
-  }
+  setLoading(false);
+  toast.error("Validation Failed");
+  return;
+}
 
   try {
 
@@ -226,8 +187,6 @@ const validateConfirmPassword = () => {
     }
 
   } catch (error) {
-
-    toast.error("ERROR:");
 
     toast.error(
 "Something went wrong. Please try again."

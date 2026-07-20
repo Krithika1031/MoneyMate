@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 import { toast } from "sonner";
+import { API_URL } from "../config";
 
 function ResetPassword() {
 
@@ -38,7 +39,7 @@ if (password !== confirmPassword) {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/reset-password",
+        `${API_URL}/api/auth/...`,
         {
           method: "POST",
           headers: {
@@ -74,7 +75,7 @@ setTimeout(() => {
 
     catch (error) {
 
-      console.log(error);
+      toast.error(error);
 
       toast.error("Something went wrong. Please try again.");
 

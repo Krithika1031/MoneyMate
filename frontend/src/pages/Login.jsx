@@ -5,6 +5,7 @@ import axios from "axios";
 import { API_URL } from "../config";
 import { toast } from "sonner";
 
+
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -31,7 +32,8 @@ if (!emailRegex.test(email)) {
   toast.error("Please enter a valid email address.");
   return;
 }
-  setLoading(true);
+
+setLoading(true);
   try {
     const res = await axios.post(
       `${API_URL}/api/auth/login`,

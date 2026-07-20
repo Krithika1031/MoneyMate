@@ -1,7 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/VerifyOTP.css";
 import { toast } from "sonner";
+import { API_URL } from "../config";
+
 
 function VerifyResetOTP() {
 
@@ -9,28 +11,10 @@ function VerifyResetOTP() {
 
   const [otp, setOtp] = useState("");
   const inputRefs = useRef([]);
-  const [timer, setTimer] = useState(30);
-const [canResend, setCanResend] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const email = localStorage.getItem("email");
-  useEffect(() => {
-
-  if (timer > 0) {
-
-    const interval = setInterval(() => {
-      setTimer((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-
-  } else {
-
-    setCanResend(true);
-
-  }
-
-}, [timer]);
+  
 
   const handleVerifyOTP = async () => {
     if (!otp.trim()) {
@@ -47,7 +31,7 @@ setLoading(true);
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/verify-reset-otp",
+  `${API_URL}/api/auth/verify-reset-otp`,
         {
           method: "POST",
           headers: {
@@ -59,43 +43,7 @@ setLoading(true);
           }),
         }
       );
-      const handleResendOTP = async () => {
-
-  try {
-
-    const response = await fetch(
-      "http://localhost:5000/api/auth/resend-otp",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (data.success) {
-
-      toast.success("OTP Sent Again 📧");
-
-      setTimer(30);
-      setCanResend(false);
-
-    } else {
-
-      toast.error(data.message);
-
-    }
-
-  } catch {
-
-    toast.error("Unable to resend OTP.");
-
-  }
-
-};
+      
 
       const data = await response.json();
 
@@ -118,8 +66,6 @@ setTimeout(() => {
     }
 
     catch (error) {
-
-      console.log(error);
 
       toast.error("Something went wrong. Please try again.");
 
@@ -215,26 +161,6 @@ setTimeout(() => {
 "Verify OTP"
 )}
 </button>
-<div className="resend-section">
-
-  {canResend ? (
-
-    <p
-      className="resend-link"
-      onClick={handleResendOTP}
-    >
-      Resend OTP
-    </p>
-
-  ) : (
-
-    <p className="timer-text">
-      Resend OTP in 00:{timer < 10 ? `0${timer}` : timer}
-    </p>
-
-  )}
-
-</div>
 </form>
 
       </div>

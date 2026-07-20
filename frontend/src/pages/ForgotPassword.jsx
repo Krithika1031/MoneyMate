@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/ForgotPassword.css";
+import { API_URL } from "../config";
 import { toast } from "sonner";
 function ForgotPassword() {
 
@@ -26,7 +27,7 @@ if (!emailRegex.test(email)) {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/forgot-password",
+        `${API_URL}/api/auth/forgot-password`,
         {
           method: "POST",
           headers: {
