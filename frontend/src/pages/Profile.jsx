@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/Profile.css";
+
 function Profile() {
-  const [showPassword, setShowPassword] = useState(false);
+
   const user = JSON.parse(localStorage.getItem("user"));
-  const navigate = useNavigate();
+
   const userEmail = user?.email || "guest";
 
   const income = JSON.parse(
@@ -47,41 +45,6 @@ function Profile() {
         <p>{user?.email}</p>
 
         <hr />
-        <div className="profile-field">
-  <label>Password</label>
-
-  <div className="password-display">
-
-    <input
-      type="text"
-      readOnly
-      value={
-        showPassword
-          ? "Hidden for your security 🔒"
-          : "••••••••••••"
-      }
-    />
-
-    <button
-      type="button"
-      className="eye-btn"
-      onClick={() =>
-        setShowPassword(!showPassword)
-      }
-    >
-      {showPassword ? <FaEyeSlash /> : <FaEye />}
-    </button>
-
-  </div>
-
-  <button
-    className="change-password-btn"
-    onClick={() => navigate("/change-password")}
-  >
-    Change Password
-  </button>
-
-</div>
 
         <div className="profile-info">
 
