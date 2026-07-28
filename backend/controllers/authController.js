@@ -3,7 +3,6 @@ import bcrypt from "bcryptjs";
 import otpGenerator from "otp-generator";
 
 import User from "../models/User.js";
-import sendEmail from "../utils/sendEmail.js";
 
 // ======================= REGISTER =======================
 
