@@ -81,13 +81,13 @@
 .auth-card{
     width:460px;
     padding:45px;
-    border-radius:28px;
     animation: floatCard 5s ease-in-out infinite;
 transition: transform 0.3s ease;
 animation:
     cardEntry .6s ease,
     floatCard 5s ease-in-out infinite;
     cursor:default;
+    border-radius:24px;
 }
 .auth-card:hover{
 
