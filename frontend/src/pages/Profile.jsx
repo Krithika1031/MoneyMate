@@ -1,10 +1,11 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/Profile.css";
 
+  const [showPassword, setShowPassword] = useState(false);
 function Profile() {
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const [showPassword, setShowPassword] = useState(false);
+
 
   const userEmail = user?.email || "guest";
 
