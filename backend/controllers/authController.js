@@ -58,11 +58,11 @@ export const loginUser = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found",
-      });
-    }
+  return res.status(404).json({
+    success: false,
+    message: "No account found with this email. Please sign up to create a new account.",
+  });
+}
 
     const isMatch = await bcrypt.compare(
       password,
