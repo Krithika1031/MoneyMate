@@ -1,12 +1,11 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/Profile.css";
-
-  const [showPassword, setShowPassword] = useState(false);
 function Profile() {
-
+  const [showPassword, setShowPassword] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
-
-
+  const navigate = useNavigate();
   const userEmail = user?.email || "guest";
 
   const income = JSON.parse(
