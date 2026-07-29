@@ -13,6 +13,7 @@ app.use(
   cors({
     origin: [
       "https://money-mate-sigma-brown.vercel.app",
+      "https://money-mate31.vercel.app",
       "http://localhost:5173",
     ],
     credentials: true,
